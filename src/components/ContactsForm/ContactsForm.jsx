@@ -18,7 +18,7 @@ export class ContactsForm extends Component {
 
     addContact({ ...this.state });
 
-    this.setState({ name: '' });
+    this.setState({ name: '', number: '' });
   };
   render() {
     const { name } = this.state;
@@ -32,7 +32,7 @@ export class ContactsForm extends Component {
             name="name"
             required
             placeholder="Enter name"
-            value={name}
+            value={this.state.name}
             onChange={this.handleChange}
           ></Input>
         </Label>
@@ -40,10 +40,10 @@ export class ContactsForm extends Component {
           Number
           <Input
             type="tel"
-            name="name"
+            name="number"
             required
             placeholder="Enter phone number"
-            value={name}
+            value={this.state.number}
             onChange={this.handleChange}
           ></Input>
         </Label>

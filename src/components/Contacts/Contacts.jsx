@@ -4,7 +4,9 @@ export const Contacts = ({ contacts }) => {
   return (
     <ContactsList>
       {contacts.map(contact => (
-        <ContactsItem key={contact.id}>{contact.name}</ContactsItem>
+        <ContactsItem key={contact.id}>
+          {contact.name + ': ' + contact.number}
+        </ContactsItem>
       ))}
     </ContactsList>
   );
