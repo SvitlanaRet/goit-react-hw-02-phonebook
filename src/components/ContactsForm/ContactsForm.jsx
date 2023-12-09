@@ -21,8 +21,6 @@ export class ContactsForm extends Component {
     this.setState({ name: '', number: '' });
   };
   render() {
-    const { name } = this.state;
-
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label>
