@@ -15,11 +15,17 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   addContact = data => {
+    const { name } = data;
+    const isExist = this.state.contacts.some(contact => contact.name === name);
+
+    if (isExist) {
+      alert(`${name} is already in contacts.`);
+      return;
+    }
+
     const newContact = {
       id: nanoid(),
       ...data,
@@ -42,6 +48,14 @@ export class App extends Component {
     );
   };
 
+  removeContact = contactId => {
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.filter(({ id }) => id !== contactId),
+      };
+    });
+  };
+
   render() {
     const { filter } = this.state;
 
@@ -51,7 +65,10 @@ export class App extends Component {
           <ContactsForm addContact={this.addContact} />
           <ContactsTitle title="Contacts" />
           <Filter value={filter} onChangeFilter={this.handleChangeFilter} />
-          <Contacts contacts={this.getFilterContacts()} />
+          <Contacts
+            contacts={this.getFilterContacts()}
+            onRemoveContact={this.removeContact}
+          />
         </Phonebook>
       </>
     );

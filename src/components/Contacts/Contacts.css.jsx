@@ -16,3 +16,11 @@ export const ContactsItem = styled.li`
   justify-content: space-between;
   font-size: 15px;
 `;
+
+export const ButtonDelete = styled.button`
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #671ae6;
+  background: #efe8fc;
+`;

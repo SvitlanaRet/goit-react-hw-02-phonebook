@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
 import { Form, Label, Input, ButtonForm } from './ContactsForm.css';
 
 export class ContactsForm extends Component {
@@ -6,6 +7,9 @@ export class ContactsForm extends Component {
     name: '',
     number: '',
   };
+
+  nameInputId = nanoid();
+  numberInputId = nanoid();
 
   handleChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
