@@ -42,9 +42,9 @@ export class App extends Component {
 
   getFilterContacts = () => {
     const { filter, contacts } = this.state;
-    const FilterlowerCase = filter.toLowerCase();
+    const filterLowerCase = filter.toLowerCase();
     return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(FilterlowerCase)
+      name.toLowerCase().includes(filterLowerCase)
     );
   };
 
@@ -66,7 +66,7 @@ export class App extends Component {
           <ContactsTitle title="Contacts" />
           <Filter value={filter} onChangeFilter={this.handleChangeFilter} />
           <Contacts
-            contacts={this.getFilterContacts()}
+            contacts={this.getFilterContacts}
             onRemoveContact={this.removeContact}
           />
         </Phonebook>

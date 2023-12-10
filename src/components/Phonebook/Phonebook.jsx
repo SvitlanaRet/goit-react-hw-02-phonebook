@@ -1,4 +1,4 @@
-import { PhonebookContainer, PhonebookTitle } from './Phonebook.css';
+import { PhonebookContainer, PhonebookTitle } from './Phonebook.styled';
 
 export const Phonebook = ({ children, title }) => {
   return (
